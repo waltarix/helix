@@ -159,7 +159,7 @@ pub fn languages_all() -> std::io::Result<()> {
         let mut data = format!(
             "{:width$}",
             item.get(..column_width - 2)
-                .map(|s| format!("{}…", s))
+                .map(|s| format!("{}⠤", s))
                 .unwrap_or_else(|| item.to_string()),
             width = column_width,
         );
