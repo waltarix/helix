@@ -2324,8 +2324,7 @@ checksum = "1dd624098567895118886609431a7c3b8f516e41d30e0643f03d94592a147e36"
 [[package]]
 name = "unicode-width"
 version = "0.1.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e51733f11c9c4f72aa0c160008246859e340b00807569a0da0e7a1079b27ba85"
+source = "git+https://github.com/waltarix/unicode-width?tag=v0.1.11-custom-r1#dbdbd2b3f286e24985f083b9e7f04535aaf9f2f8"
 
 [[package]]
 name = "url"

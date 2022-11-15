@@ -25,7 +25,7 @@ lto = "thin"
 inherits = "release"
 lto = "fat"
 codegen-units = 1
-# strip = "debuginfo" # TODO: or strip = true
+strip = true
 opt-level = 3
 
 [profile.integration]
@@ -37,3 +37,6 @@ package.helix-term.opt-level = 2
 [workspace.dependencies]
 tree-sitter = { version = "0.20" }
 nucleo = "0.2.0"
+
+[patch.crates-io]
+unicode-width = { git = "https://github.com/waltarix/unicode-width", tag = "v0.1.11-custom-r1" }

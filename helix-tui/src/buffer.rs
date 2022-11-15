@@ -308,7 +308,7 @@ impl Buffer {
     }
 
     /// Print at most the first `width` characters of a string if enough space is available
-    /// until the end of the line. If `ellipsis` is true appends a `…` at the end of
+    /// until the end of the line. If `ellipsis` is true appends a `⠤` at the end of
     /// truncated lines. If `truncate_start` is `true`, truncate the beginning of the string
     /// instead of the end.
     #[allow(clippy::too_many_arguments)]
@@ -354,7 +354,7 @@ impl Buffer {
                 x_offset += width;
             }
             if ellipsis && x_offset - (x as usize) < string.width() {
-                self.content[index].set_symbol("…");
+                self.content[index].set_symbol("⠤");
             }
         } else {
             let mut start_index = self.index_of(x, y);
@@ -363,7 +363,7 @@ impl Buffer {
             let content_width = string.width();
             let truncated = content_width > width;
             if ellipsis && truncated {
-                self.content[start_index].set_symbol("…");
+                self.content[start_index].set_symbol("⠤");
                 start_index += 1;
             }
             if !truncated {
@@ -447,7 +447,7 @@ impl Buffer {
         let content_width = spans.width();
         let truncated = content_width > width as usize;
         if truncated {
-            self.content[start_index].set_symbol("…");
+            self.content[start_index].set_symbol("⠤");
             start_index += 1;
         } else {
             index -= width as usize - content_width;
