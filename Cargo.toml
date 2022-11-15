@@ -11,15 +11,17 @@ members = [
 ]
 
 default-members = [
-  "helix-term"
+  "helix-term",
 ]
 
 [profile.dev]
 split-debuginfo = "unpacked"
 
 [profile.release]
+codegen-units = 1
 lto = "thin"
-# debug = true
+opt-level = 3
+strip = true
 
 [profile.opt]
 inherits = "release"
@@ -27,3 +29,6 @@ lto = "fat"
 codegen-units = 1
 # strip = "debuginfo" # TODO: or strip = true
 opt-level = 3
+
+[patch.crates-io]
+unicode-width = { git = "https://github.com/waltarix/unicode-width", tag = "v0.1.10-custom" }
